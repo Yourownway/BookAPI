@@ -1,11 +1,51 @@
 
-CREATE DATABASE IF NOT EXISTS Auth;
+CREATE DATABASE IF NOT EXISTS BooksAPI;
 
-USE Auth;
+USE BooksAPI;
+
 CREATE TABLE Users
 (
-    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    id VARCHAR(36) PRIMARY KEY AUTO_INCREMENT NOT NULL,
     email VARCHAR(100),
     password VARCHAR(255)
+  
+);
+
+CREATE TABLE Bookings
+(
+    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    userId VARCHAR(36),
+    booksId INT,
+);
+
+CREATE TABLE Books
+(
+    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    name VARCHAR(50)
+    auteur VARCHAR(50),
+  
+);
+
+CREATE TABLE BooksGenres
+( 
+    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    booksId INT,
+    genresId INT, 
+  
+);
+
+CREATE TABLE Genres
+(
+    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    name VARCHAR(100),
+    
+  
+);
+
+CREATE TABLE Categories
+(
+    id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    name VARCHAR(100),
+   
   
 );

@@ -14,8 +14,7 @@ module.exports = (services) => {
           let hash = await services.cryptPassword.hashPassword(password);
           console.log(hash, "controllers");
           let result = await services.user.register([email, hash]);
-          // let user = await services.user.getById(result.insertId);
-          // await services.mailer.sendMail(user);
+
           res.status(201).json("new user registered");
         }
       } catch (err) {
