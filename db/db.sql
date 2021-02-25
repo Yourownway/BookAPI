@@ -36,7 +36,7 @@ CREATE TABLE `Books`
     `categorieId` INT,
     FOREIGN KEY (categorieId) REFERENCES Categories(id),
      `createdAt` datetime DEFAULT NULL,
-    `updatedA` datetime DEFAULT NULL
+    `updatedAt` datetime DEFAULT NULL
 
 );
 DROP TABLE IF EXISTS `Genres`;
