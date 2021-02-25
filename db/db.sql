@@ -81,10 +81,12 @@ INSERT INTO Users (`id`, `email`, `password`) VALUES
 (1,'Gwen@gmail.fr','azerty'),(2,'Yassin@gmail.fr','azerty'),(3,'Lorris@gmail.fr','azerty');
 
 INSERT INTO Genres (`id`, `name` ) VALUES 
-(1,'Polar'),(2,'Action'),(3,'Sience Fiction'),(4,'Tragédie');
+(1,'Polar'),(2,'Action'),(3,'Sience Fiction'),(4,'Tragédie'),(5,'Fantasique'),(6,'Historique'),(7,'Comedie'),(8,'Drame');
+
 INSERT INTO Categories (`id`, `name` ) VALUES 
 (1,'Roman'),(2,'Essai'),(3,'Poésie'),(4,'Théâtral');
 
-
 INSERT INTO Books (`id`, `name`,`auteur`,`categorieId` ) VALUES 
 (1,'Silmarillion','Tolkien',1 ),(2,'les fourberies de scapin', 'Molière', 4),(3,'1984', 'George Orwell',1);
+
+INSERT INTO BooksGenres (`id`, `bookId`,`genreId` ) VALUES (1,1,5), (2,1,6),(3,2,6),(4,2,7),(5,3,3),(6,3,6),(7,3,8)
