@@ -1,10 +1,10 @@
 {
-  "name": "skeletonapi",
+  "name": "BookAPI",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "start": "lsof -P | grep ':2460' | awk '{print $2}' | xargs kill -9 && node app.js"
   },
   "author": "",
   "license": "ISC",

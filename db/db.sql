@@ -14,7 +14,6 @@ CREATE TABLE `Users`
     `updatedAt` datetime DEFAULT NULL
     
 );
-
 DROP TABLE IF EXISTS `Categories`;
 CREATE TABLE `Categories`
 (
@@ -60,7 +59,6 @@ CREATE TABLE `BooksGenres`
     FOREIGN KEY (genreId) REFERENCES Genres(id),
     `createdAt` datetime DEFAULT NULL,
     `updatedAt` datetime DEFAULT NULL
-
   
 );
 
@@ -89,4 +87,3 @@ INSERT INTO `Books` (`id`, `name`,`auteur`,`categorieId` ) VALUES
 (1,'Silmarillion','Tolkien',1 ),(2,'les fourberies de scapin', 'Molière', 4),(3,'1984', 'George Orwell',1);
 
 INSERT INTO `BooksGenres` (`id`, `bookId`,`genreId` ) VALUES (1,1,5), (2,1,6),(3,2,6),(4,2,7),(5,3,3),(6,3,6),(7,3,8);
-
