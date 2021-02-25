@@ -1,7 +1,5 @@
 SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
 
-
-
 CREATE DATABASE IF NOT EXISTS BooksAPI;
 
 USE BooksAPI;
@@ -12,9 +10,8 @@ CREATE TABLE Users
     id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     email VARCHAR(100),
     password VARCHAR(255),
-     createdAt datetime DEFAULT NULL,
+    createdAt datetime DEFAULT NULL,
     updatedA datetime DEFAULT NULL
-    
 );
 
 DROP TABLE IF EXISTS Categories;
@@ -25,7 +22,6 @@ CREATE TABLE Categories
     createdAt datetime DEFAULT NULL,
     updatedA datetime DEFAULT NULL  
 );
-
 
 DROP TABLE IF EXISTS Books;
 
@@ -48,8 +44,6 @@ CREATE TABLE Genres
     genreName VARCHAR(100),
     createdAt datetime DEFAULT NULL,
     updatedA datetime DEFAULT NULL
-    
-  
 );
 DROP TABLE IF EXISTS BooksGenres;
 
@@ -62,10 +56,8 @@ CREATE TABLE BooksGenres
     FOREIGN KEY (genreId) REFERENCES Genres(id),
     createdAt datetime DEFAULT NULL,
     updatedA datetime DEFAULT NULL
-  
 );
 DROP TABLE IF EXISTS Bookings;
-
 
 CREATE TABLE Bookings  
 (
@@ -77,7 +69,6 @@ CREATE TABLE Bookings
     createdAt datetime DEFAULT NULL,
     updatedA datetime DEFAULT NULL
 );
-
 
 
 INSERT INTO Users (`id`, `email`, `password`) VALUES 
