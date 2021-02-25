@@ -14,19 +14,16 @@ CREATE TABLE Users
     
 );
 
-
-
-
 DROP TABLE IF EXISTS Categories;
 CREATE TABLE Categories
 (
     id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     name VARCHAR(100),
-     createdAt datetime DEFAULT NULL,
-    updatedA datetime DEFAULT NULL
-   
-  
+    createdAt datetime DEFAULT NULL,
+    updatedA datetime DEFAULT NULL  
 );
+
+
 DROP TABLE IF EXISTS Books;
 
 CREATE TABLE Books  
@@ -36,7 +33,7 @@ CREATE TABLE Books
     auteur VARCHAR(50),
     categorieId INT,
     FOREIGN KEY (categorieId) REFERENCES Categories(id),
-     createdAt datetime DEFAULT NULL,
+    createdAt datetime DEFAULT NULL,
     updatedA datetime DEFAULT NULL
 
 );
@@ -78,5 +75,16 @@ CREATE TABLE Bookings
     updatedA datetime DEFAULT NULL
 );
 
+
+
 INSERT INTO Users (`id`, `email`, `password`) VALUES 
-(1,'Gwen@gmail.fr','azerty'),(2,'Yassin@gmail.fr','azerty'),(3,'Lorris@gmail.fr','azerty')
+(1,'Gwen@gmail.fr','azerty'),(2,'Yassin@gmail.fr','azerty'),(3,'Lorris@gmail.fr','azerty');
+
+INSERT INTO Genres (`id`, `name` ) VALUES 
+(1,'Polar'),(2,'Action'),(3,'Sience Fiction'),(4,'Tragédie');
+INSERT INTO Categories (`id`, `name` ) VALUES 
+(1,'Roman'),(2,'Essai'),(3,'Poésie'),(4,'Théâtral');
+
+
+INSERT INTO Books (`id`, `name`,`auteur`,`categorieId` ) VALUES 
+(1,'Silmarillion','Tolkien',1 ),(2,'les fourberies de scapin', 'Molière', 4),(3,'1984', 'George Orwell',1);
