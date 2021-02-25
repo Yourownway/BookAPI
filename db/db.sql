@@ -1,3 +1,6 @@
+SET GLOBAL sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));
+
+
 
 CREATE DATABASE IF NOT EXISTS BooksAPI;
 
@@ -29,12 +32,12 @@ DROP TABLE IF EXISTS `Books`;
 CREATE TABLE `Books` 
 (
     `id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    `name` VARCHAR(50),
+    `bookName` VARCHAR(50),
     `auteur` VARCHAR(50),
     `categorieId` INT,
     FOREIGN KEY (categorieId) REFERENCES Categories(id),
-     `createdAt` datetime DEFAULT NULL,
-    `updatedA` datetime DEFAULT NULL
+    `createdAt` datetime DEFAULT NULL,
+    `updatedAt` datetime DEFAULT NULL
 
 );
 DROP TABLE IF EXISTS `Genres`;
