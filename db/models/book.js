@@ -1,5 +1,5 @@
 class Book {
-  constructor(db) {
+  constructor(db, data) {
     this.db = db;
   }
 
