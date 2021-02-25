@@ -2,7 +2,13 @@ module.exports = (models) => {
   const book_repository = {
     getAll: async (data) => {
       return models.book.query(
-        "SELECT Books.auteur, Books.bookName, GROUP_CONCAT(Genres.genreName SEPARATOR '-') as genre FROM (Books INNER JOIN BooksGenres ON Books.id = BooksGenres.bookId) INNER JOIN Genres ON BooksGenres.genreId = Genres.id GROUP BY BooksGenres.bookId"
+        "SELECT Books.auteur, Books.bookName, GROUP_CONCAT(Genres.genreName SEPARATOR '-') as genre ,Categories.categorieName FROM (Books INNER JOIN BooksGenres ON Books.id = BooksGenres.bookId) INNER JOIN Genres ON BooksGenres.genreId = Genres.id INNER JOIN Categories ON Books.categorieId = Categories.id  GROUP BY BooksGenres.bookId"
+      );
+    },
+    getBySearch: async (input) => {
+      console.log(input);
+      return models.book.query(
+        `SELECT DISTINCT Books.auteur, Books.bookName FROM (Books INNER JOIN BooksGenres ON Books.id = BooksGenres.bookId) INNER JOIN Genres ON BooksGenres.genreId = Genres.id INNER JOIN Categories ON Categories.id = Books.id WHERE Genres.genreName LIKE '%${input}%' OR Categories.categorieName LIKE '%${input}%'OR Books.bookName LIKE '%${input}%' OR Books.auteur LIKE '%${input}%' `
       );
     },
   };
