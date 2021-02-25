@@ -14,6 +14,9 @@ CREATE TABLE Users
     
 );
 
+
+
+
 DROP TABLE IF EXISTS Categories;
 CREATE TABLE Categories
 (
@@ -57,7 +60,7 @@ CREATE TABLE BooksGenres
     genreId INT, 
     FOREIGN KEY (bookId) REFERENCES Books(id),
     FOREIGN KEY (genreId) REFERENCES Genres(id),
-     createdAt datetime DEFAULT NULL,
+    createdAt datetime DEFAULT NULL,
     updatedA datetime DEFAULT NULL
   
 );
@@ -74,3 +77,6 @@ CREATE TABLE Bookings
     createdAt datetime DEFAULT NULL,
     updatedA datetime DEFAULT NULL
 );
+
+INSERT INTO Users (`id`, `email`, `password`) VALUES 
+(1,'Gwen@gmail.fr','azerty'),(2,'Yassin@gmail.fr','azerty'),(3,'Lorris@gmail.fr','azerty')
