@@ -14,17 +14,8 @@ CREATE TABLE `Users`
     `updatedAt` datetime DEFAULT NULL
     
 );
-<<<<<<< HEAD
-
-
-
-
-DROP TABLE IF EXISTS Categories;
-CREATE TABLE Categories
-=======
 DROP TABLE IF EXISTS `Categories`;
 CREATE TABLE `Categories`
->>>>>>> Lorris
 (
     `id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
     `name` VARCHAR(100),
@@ -68,13 +59,8 @@ CREATE TABLE `BooksGenres`
     `genreId` INT, 
     FOREIGN KEY (bookId) REFERENCES Books(id),
     FOREIGN KEY (genreId) REFERENCES Genres(id),
-<<<<<<< HEAD
-    createdAt datetime DEFAULT NULL,
-    updatedA datetime DEFAULT NULL
-=======
     `createdAt` datetime DEFAULT NULL,
     `updatedAt` datetime DEFAULT NULL
->>>>>>> Lorris
   
 );
 DROP TABLE IF EXISTS `Bookings`;
@@ -92,18 +78,6 @@ CREATE TABLE `Bookings`
     `updatedAt` datetime DEFAULT NULL
 );
 
-<<<<<<< HEAD
-INSERT INTO Users (`id`, `email`, `password`) VALUES 
-(1,'Gwen@gmail.fr','azerty'),(2,'Yassin@gmail.fr','azerty'),(3,'Lorris@gmail.fr','azerty')
-=======
-
-
-
-
-
-
-
-
 
 
 
@@ -120,4 +94,3 @@ INSERT INTO `Books` (`id`, `name`,`auteur`,`categorieId` ) VALUES
 (1,'Silmarillion','Tolkien',1 ),(2,'les fourberies de scapin', 'Molière', 4),(3,'1984', 'George Orwell',1);
 
 INSERT INTO `BooksGenres` (`id`, `bookId`,`genreId` ) VALUES (1,1,5), (2,1,6),(3,2,6),(4,2,7),(5,3,3),(6,3,6),(7,3,8);
->>>>>>> Lorris
