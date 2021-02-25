@@ -12,7 +12,7 @@ module.exports = (services) => {
         if (!email || !password) res.status(400).json("missing parameters");
         else {
           let hash = await services.cryptPassword.hashPassword(password);
-          console.log(hash, "controllers");
+
           let result = await services.user.register([email, hash]);
 
           res.status(201).json("new user registered");
