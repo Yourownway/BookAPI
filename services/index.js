@@ -12,7 +12,12 @@ const user_service = require("./user"),
   token_service = require("./jwt");
 =======
   bcrypt_service = require("./bcrypt"),
+<<<<<<< HEAD
   book_service = require("./book");
+>>>>>>> origin/Lorris
+=======
+  book_service = require("./book"),
+  booking_service = require("./booking");
 >>>>>>> origin/Lorris
 
 // create a services object for map all the services
@@ -24,6 +29,7 @@ const services = {
   jwt: token_service(jwt),
 =======
   book: book_service(repositories),
+  booking: booking_service(repositories),
   cryptPassword: bcrypt_service(bcrypt),
 >>>>>>> origin/Lorris
 };
