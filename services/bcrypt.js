@@ -5,8 +5,8 @@ module.exports = (bcrypt) => {
       return hash;
     },
     comparePassword: async (data) => {
-      // const compare = await bcrypt.compa(data, 10);
-      // return hash;
+      const compare = await bcrypt.compare(data, 10);
+      return compare;
     },
   };
 
