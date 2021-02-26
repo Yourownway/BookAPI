@@ -11,13 +11,9 @@ module.exports = (express, controllers) => {
   const routes = [
     user_route(express, middlewares, controllers),
     book_route(express, controllers),
-<<<<<<< HEAD
     booking_route(express, middlewares, controllers),
-=======
-    booking_route(express, controllers),
     categorie_route(express, controllers),
     genre_route(express, controllers),
->>>>>>> Lorris
   ];
 
   return routes;
