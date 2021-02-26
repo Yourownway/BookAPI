@@ -74,6 +74,29 @@ CREATE TABLE `Bookings`
     `updatedAt` datetime DEFAULT NULL
 );
 
+DROP TABLE IF EXISTS `WishLists`;
+
+CREATE TABLE `WishLists`
+(
+    `id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    `userId`INT,
+    `bookId`INT,
+    FOREIGN KEY (userId) REFERENCES Users(id),
+    FOREIGN KEY (bookId) REFERENCES Books(id),
+    `createdAt` datetime DEFAULT NULL,
+    `updatedAt` datetime DEFAULT NULL
+)
+
+
+
+
+
+
+
+
+
+
+
 INSERT INTO `Users` (`id`, `email`, `password`) VALUES 
 (1,'Gwen@gmail.fr','azerty'),(2,'Yassin@gmail.fr','azerty'),(3,'Lorris@gmail.fr','azerty');
 
