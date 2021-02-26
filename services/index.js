@@ -25,7 +25,6 @@ const services = {
   booking: booking_service(repositories),
   genre: genre_service(repositories),
   categorie: categorie_service(repositories),
-  cryptPassword: bcrypt_service(bcrypt),
   wishList: wishList_service(repositories),
 };
 

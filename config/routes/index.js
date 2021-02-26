@@ -11,7 +11,7 @@ module.exports = (express, controllers) => {
     user_route(express, middlewares, controllers),
     book_route(express, controllers),
     booking_route(express, middlewares, controllers),
-    booking_route(express, controllers),
+    booking_route(express, middlewares, controllers),
     wishList_route(express, middlewares, controllers),
     categorie_route(express, controllers),
     genre_route(express, controllers),

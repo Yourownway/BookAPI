@@ -35,7 +35,7 @@ module.exports = (services) => {
         if (!email || !password) res.status(400).json("missing parameters");
         else {
           const userFound = await services.user.userFoundByEmail(email);
-          console.log("USERFOUND", userFound);
+
           if (!userFound) {
             console.log("Email incorrect");
           }
