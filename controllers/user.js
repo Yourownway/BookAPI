@@ -20,8 +20,9 @@ module.exports = (services) => {
         else {
           let bcrypt = await services.bcrypt.cryptPassword(password);
           let result = await services.user.register([email, bcrypt]);
-          let user = await services.user.getById(result.insertId);
-          await services.mailer.sendMail(user);
+          // let user = await services.user.getById(result.insertId);
+          // await services.mailer.sendMail(user);
+          console.log("tutu");
           res.status(201).json("new user registered");
         }
       } catch (err) {
