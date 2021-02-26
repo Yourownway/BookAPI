@@ -81,14 +81,6 @@ CREATE TABLE `Bookings`
 
 
 
-
-
-
-
-
-
-
-
 INSERT INTO `Users` (`id`, `email`, `password`) VALUES 
 (1,'Gwen@gmail.fr','azerty'),(2,'Yassin@gmail.fr','azerty'),(3,'Lorris@gmail.fr','azerty');
 
