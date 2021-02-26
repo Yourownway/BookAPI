@@ -37,8 +37,11 @@ module.exports = (services) => {
         else {
           const userFound = await services.user.userFoundByEmail(email);
           if (!userFound) {
-            console.log("Email incorrect");
+            return res
+              .status(401)
+              .json({ message: `l'utilisateur ${email} n'exsiste pas` });
           }
+
           const comparePassword = await services.bcrypt.comparePassword(
             password,
             userFound[0].password
@@ -46,6 +49,7 @@ module.exports = (services) => {
           if (!comparePassword) {
             console.log("Mot de passe incorrect");
           }
+          console.log("tutu");
           await services.jwt.createToken(res, userFound);
 
           res.status(201).json({ message: "Connecté" });

@@ -12,6 +12,7 @@ module.exports = (jwt) => {
           expiresIn: "24h",
         }
       );
+      console.log(token);
       return res.cookie("token", token, {
         maxAge: 3600000,
         secure: false,
