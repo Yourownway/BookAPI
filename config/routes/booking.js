@@ -1,7 +1,9 @@
-module.exports = (express, controllers) => {
+module.exports = (express, middleware, controllers) => {
   const router = express.Router();
 
-  router.route("/:userId/:bookId/booking").get(controllers.booking.rentBook);
+  router
+    .route("/:userId/:bookId/booking")
+    .get(middleware.auth.verifyToken, controllers.booking.rentBook);
 
   return router;
 };

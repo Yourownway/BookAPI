@@ -11,7 +11,9 @@ const user_service = require("./user"),
   bcrypt_service = require("./bcrypt"),
   book_service = require("./book"),
   booking_service = require("./booking"),
-  wishList_service = require("./whishList");
+  wishList_service = require("./whishList"),
+  genre_service = require("./genre"),
+  categorie_service = require("./categorie");
 
 // create a services object for map all the services
 const services = {
@@ -21,6 +23,8 @@ const services = {
   jwt: token_service(jwt),
   book: book_service(repositories),
   booking: booking_service(repositories),
+  genre: genre_service(repositories),
+  categorie: categorie_service(repositories),
   cryptPassword: bcrypt_service(bcrypt),
   wishList: wishList_service(repositories),
 };

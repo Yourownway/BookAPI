@@ -5,7 +5,9 @@ const services = require("../services/index");
 const user_controller = require("./user"),
   book_controller = require("./book"),
   booking_controller = require("./booking"),
-  wishList_controller = require("./wishList");
+  wishList_controller = require("./wishList"),
+  genre_controller = require("./genre"),
+  categorie_controller = require("./categorie");
 
 // create a controllers object for map all the controllers
 const controllers = {
@@ -13,6 +15,8 @@ const controllers = {
   book: book_controller(services),
   booking: booking_controller(services),
   wishList: wishList_controller(services),
+  genre: genre_controller(services),
+  categorie: categorie_controller(services),
 };
 
 // export our controllers object
