@@ -4,8 +4,8 @@ module.exports = (services) => {
       console.log("USER ==>", req.user.id);
       const userId = req.user.id;
       const bookId = req.params.id;
-      const result = await services.wishList.addBook({ userId, bookId });
-      res.status(201).json({ result, message: "livre ajouté" });
+      await services.wishList.addBook({ userId, bookId });
+      res.status(201).json({ message: "livre ajouté" });
     },
   };
   return wishList_controller;

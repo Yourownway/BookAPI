@@ -11,7 +11,8 @@ module.exports = (repositories) => {
       return rows[0];
     },
     userFoundByEmail: async (email) => {
-      return repositories.user.userFoundByEmail(email);
+      const rows = await repositories.user.userFoundByEmail(email);
+      return rows[0];
     },
   };
 
