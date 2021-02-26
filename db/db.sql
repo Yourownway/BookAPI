@@ -78,6 +78,18 @@ CREATE TABLE `Bookings`
     `updatedAt` datetime DEFAULT NULL
 );
 
+DROP TABLE IF EXISTS `WishLists`;
+
+CREATE TABLE `WishLists`
+(
+    `id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    `userId`INT,
+    `bookId`INT,
+    FOREIGN KEY (userId) REFERENCES Users(id),
+    FOREIGN KEY (bookId) REFERENCES Books(id),
+    `createdAt` datetime DEFAULT NULL,
+    `updatedAt` datetime DEFAULT NULL
+)
 
 
 
