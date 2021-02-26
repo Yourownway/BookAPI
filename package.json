@@ -4,7 +4,7 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "lsof -P | grep ':2460' | awk '{print $2}' | xargs kill -9 && node app.js"
+    "start": "nodemon app.js"
   },
   "author": "",
   "license": "ISC",

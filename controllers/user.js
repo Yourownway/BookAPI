@@ -36,6 +36,7 @@ module.exports = (services) => {
         if (!email || !password) res.status(400).json("missing parameters");
         else {
           const userFound = await services.user.userFoundByEmail(email);
+
           if (!userFound) {
             return res
               .status(401)
@@ -44,7 +45,7 @@ module.exports = (services) => {
 
           const comparePassword = await services.bcrypt.comparePassword(
             password,
-            userFound[0].password
+            userFound.password
           );
           if (!comparePassword) {
             console.log("Mot de passe incorrect");
@@ -52,7 +53,7 @@ module.exports = (services) => {
           console.log("tutu");
           await services.jwt.createToken(res, userFound);
 
-          res.status(201).json({ message: "Connecté" });
+          res.status(201).json({ userFound, message: "Connecté" });
         }
       } catch (err) {
         res.status(400).json(err);

@@ -74,13 +74,36 @@ CREATE TABLE `Bookings`
     `updatedAt` datetime DEFAULT NULL
 );
 
+DROP TABLE IF EXISTS `WishLists`;
+
+CREATE TABLE `WishLists`
+(
+    `id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
+    `userId`INT,
+    `bookId`INT,
+    FOREIGN KEY (userId) REFERENCES Users(id),
+    FOREIGN KEY (bookId) REFERENCES Books(id),
+    `createdAt` datetime DEFAULT NULL,
+    `updatedAt` datetime DEFAULT NULL
+);
+
+
+
+
+
+
+
+
+
+
+
 INSERT INTO `Users` (`id`, `email`, `password`) VALUES 
 (1,'Gwen@gmail.fr','azerty'),(2,'Yassin@gmail.fr','azerty'),(3,'Lorris@gmail.fr','azerty');
 
-INSERT INTO `Genres` (`id`, `name` ) VALUES 
+INSERT INTO `Genres` (`id`,`name`) VALUES 
 (1,'Polar'),(2,'Action'),(3,'Sience Fiction'),(4,'Tragédie'),(5,'Fantasique'),(6,'Historique'),(7,'Comedie'),(8,'Drame');
 
-INSERT INTO `Categories` (`id`, `name` ) VALUES 
+INSERT INTO `Categories` (`id`,`name`) VALUES 
 (1,'Roman'),(2,'Essai'),(3,'Poésie'),(4,'Théâtral');
 
 INSERT INTO `Books` (`id`, `name`,`auteur`,`categorieId` ) VALUES 

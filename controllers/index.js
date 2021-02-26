@@ -5,6 +5,7 @@ const services = require("../services/index");
 const user_controller = require("./user"),
   book_controller = require("./book"),
   booking_controller = require("./booking"),
+  wishList_controller = require("./wishList"),
   genre_controller = require("./genre"),
   categorie_controller = require("./categorie");
 
@@ -13,6 +14,7 @@ const controllers = {
   user: user_controller(services),
   book: book_controller(services),
   booking: booking_controller(services),
+  wishList: wishList_controller(services),
   genre: genre_controller(services),
   categorie: categorie_controller(services),
 };

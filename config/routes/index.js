@@ -1,9 +1,8 @@
-const middlewares = require("../../middlewares");
-
 module.exports = (express, controllers) => {
   const user_route = require("./user"),
     book_route = require("./book"),
     booking_route = require("./booking"),
+    wishList_route = require("./wishList"),
     categorie_route = require("./categorie"),
     genre_route = require("./genre"),
     middlewares = require("../../middlewares/index");
@@ -12,6 +11,11 @@ module.exports = (express, controllers) => {
     user_route(express, middlewares, controllers),
     book_route(express, controllers),
     booking_route(express, middlewares, controllers),
+<<<<<<< HEAD
+=======
+    booking_route(express, middlewares, controllers),
+    wishList_route(express, middlewares, controllers),
+>>>>>>> master
     categorie_route(express, controllers),
     genre_route(express, controllers),
   ];
