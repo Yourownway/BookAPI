@@ -9,7 +9,7 @@ module.exports = (express, controllers) => {
   const routes = [
     user_route(express, middlewares, controllers),
     book_route(express, controllers),
-    booking_route(express, controllers),
+    booking_route(express, middlewares, controllers),
   ];
 
   return routes;
