@@ -4,8 +4,8 @@ module.exports = (jwt) => {
       const secretKey = process.env.JWT_SIGN_SECRET;
       const token = jwt.sign(
         {
-          email: data.email,
-          id: data.id,
+          email: data[0].email,
+          id: data[0].id,
         },
         secretKey,
         {
@@ -14,7 +14,7 @@ module.exports = (jwt) => {
       );
       return res.cookie("token", token, {
         maxAge: 3600000,
-        secure: true,
+        secure: false,
         httpOnly: true,
       });
     },
