@@ -25,9 +25,7 @@ CREATE TABLE `Categories`
   
 );
 
-
 DROP TABLE IF EXISTS `Books`;
-
 CREATE TABLE `Books` 
 (
     `id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
@@ -39,8 +37,8 @@ CREATE TABLE `Books`
     `updatedAt` datetime DEFAULT NULL
 
 );
-DROP TABLE IF EXISTS `Genres`;
 
+DROP TABLE IF EXISTS `Genres`;
 CREATE TABLE `Genres` 
 (
     `id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
@@ -50,8 +48,8 @@ CREATE TABLE `Genres`
     
   
 );
-DROP TABLE IF EXISTS `BooksGenres`;
 
+DROP TABLE IF EXISTS `BooksGenres`;
 CREATE TABLE `BooksGenres`  
 ( 
     `id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
@@ -63,10 +61,8 @@ CREATE TABLE `BooksGenres`
     `updatedAt` datetime DEFAULT NULL
   
 );
+
 DROP TABLE IF EXISTS `Bookings`;
-
-
-
 CREATE TABLE `Bookings`  
 (
     `id` INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
@@ -77,9 +73,6 @@ CREATE TABLE `Bookings`
     `createdAt` datetime DEFAULT NULL,
     `updatedAt` datetime DEFAULT NULL
 );
-
-
-
 
 INSERT INTO `Users` (`id`, `email`, `password`) VALUES 
 (1,'Gwen@gmail.fr','azerty'),(2,'Yassin@gmail.fr','azerty'),(3,'Lorris@gmail.fr','azerty');
