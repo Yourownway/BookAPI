@@ -1,4 +1,4 @@
-module.exports = (express, controllers) => {
+module.exports = (express, middleware, controllers) => {
   const router = express.Router();
 
   router
@@ -8,7 +8,11 @@ module.exports = (express, controllers) => {
     .post(controllers.user.login);
 
   router.route("/users/login").post(controllers.user.login);
-  router.get("/users/me").get(controllers.user.getUser);
+  router.get(
+    "/users/me",
+    middleware.auth.verifyToken,
+    controllers.user.getUser
+  );
 
   return router;
 };
