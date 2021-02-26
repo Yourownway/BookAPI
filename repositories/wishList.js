@@ -3,8 +3,9 @@ module.exports = (models) => {
     addBook: async (data) => {
       console.log("DATA ==>", data);
       return models.wishList.query(
-        `INSERT INTO WishLists (userId, bookId)
-                `
+        ` 
+        INSERT INTO WishLists (userId, bookId) VALUES (${data.userId},${data.bookId}) 
+        `
       );
     },
   };
